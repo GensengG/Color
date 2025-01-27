@@ -1,10 +1,9 @@
 import {useState} from "react";
 
 export const ColorForm = () => {
-
     let [state, setState] = useState("");
     let result: string = "";
-
+    
     const handleChange = (e) => {
         let valueStart = e.target.value;
         if((valueStart.length === 7) && (valueStart[0] === "#")){
@@ -16,7 +15,6 @@ export const ColorForm = () => {
         } else if (valueStart.length > 7){
             result = "Ошибка!";
         } 
-
         setState(result);
     };
 
@@ -27,7 +25,6 @@ export const ColorForm = () => {
                     type="text"
                     className="color__input"
                     onChange = {handleChange}
-
                 ></input>
                 <div className="color__result" style={{backgroundColor:state}}>
                     {state}
